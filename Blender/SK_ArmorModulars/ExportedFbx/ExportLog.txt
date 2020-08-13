@@ -1,6 +1,9 @@
 ...
-0 StaticMesh(s) | 1 SkeletalMesh(s) | 0 Alembic(s) | 0 Animation(s) | 0 Camera(s) | 0 Other(s)
+1 StaticMesh(s) | 1 SkeletalMesh(s) | 0 Alembic(s) | 0 Animation(s) | 0 Camera(s) | 0 Other(s)
 
-[SkeletalMesh] -> "SK_rig.fbx" exported in 0.6311324238777161 sec.
-D:\Users\97ran\Desktop\UEFY_Manneq\ExportedFbx\SkeletalMesh\rig
+[SkeletalMesh] -> "SK_LegModular.fbx" exported in 0.33569028973579407 sec.
+D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_ArmorModulars\ExportedFbx\SkeletalMesh\LegModular\LegModular
+
+[StaticMesh] -> "SM_DefaultBody.fbx" exported in 0.041624799370765686 sec.
+D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_ArmorModulars\ExportedFbx\StaticMesh\ChestModular
 
