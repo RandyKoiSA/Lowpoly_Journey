@@ -132,12 +132,12 @@ def ImportAllAssets():
 	SkeletalMesh_PreImportPath = []
 	print('========================= Creating SkeletalMesh tasks... =========================')
 	
-	def CreateTask_SK_LegModular():
-		################[ Import LegModular as SkeletalMesh type ]################
-		print('================[ New import task : LegModular as SkeletalMesh type ]================')
-		FilePath = os.path.join(r'D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_ArmorModulars\ExportedFbx\SkeletalMesh\LegModular\LegModular\SK_LegModular.fbx')
-		AdditionalParameterLoc = os.path.join(r'D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_ArmorModulars\ExportedFbx\SkeletalMesh\LegModular\LegModular\SK_LegModular_AdditionalParameter.ini')
-		AssetImportPath = (os.path.join(unrealImportLocation, r'LegModular').replace('\\','/')).rstrip('/')
+	def CreateTask_SK_Chestplate():
+		################[ Import Chestplate as SkeletalMesh type ]################
+		print('================[ New import task : Chestplate as SkeletalMesh type ]================')
+		FilePath = os.path.join(r'D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_ArmorModulars\ExportedFbx\SkeletalMesh\Chestplate\SK_Chestplate.fbx')
+		AdditionalParameterLoc = os.path.join(r'D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_ArmorModulars\ExportedFbx\SkeletalMesh\Chestplate\SK_Chestplate_AdditionalParameter.ini')
+		AssetImportPath = (os.path.join(unrealImportLocation, r'').replace('\\','/')).rstrip('/')
 		task = unreal.AssetImportTask()
 		task.filename = FilePath
 		task.destination_path = AssetImportPath
@@ -156,16 +156,16 @@ def ImportAllAssets():
 		task.get_editor_property('options').texture_import_data.set_editor_property('material_search_location', unreal.MaterialSearchLocation.LOCAL)
 		task.get_editor_property('options').skeletal_mesh_import_data.set_editor_property('import_morph_targets', True)
 		task.get_editor_property('options').skeletal_mesh_import_data.set_editor_property('convert_scene', True)
-		print('================[ import asset : LegModular ]================')
+		print('================[ import asset : Chestplate ]================')
 		unreal.AssetToolsHelpers.get_asset_tools().import_asset_tasks([task])
 		if len(task.imported_object_paths) > 0:
 			asset = unreal.find_asset(task.imported_object_paths[0])
 		else:
 			asset = None
 		if asset == None:
-			ImportFailList.append('Asset "LegModular" not found for after inport')
+			ImportFailList.append('Asset "Chestplate" not found for after inport')
 			return
-		print('========================= Imports of LegModular completed ! Post treatment started...	=========================')
+		print('========================= Imports of Chestplate completed ! Post treatment started...	=========================')
 	
 		#Import the SkeletalMesh socket(s)
 		sockets_to_add = GetOptionByIniFile(AdditionalParameterLoc, 'Sockets', True)
@@ -177,10 +177,10 @@ def ImportAllAssets():
 		lods_to_add = GetOptionByIniFile(AdditionalParameterLoc, 'LevelOfDetail')
 		for x, lod in enumerate(lods_to_add):
 			pass
-		print('========================= Post treatment of LegModular completed !	 =========================')
+		print('========================= Post treatment of Chestplate completed !	 =========================')
 		unreal.EditorAssetLibrary.save_loaded_asset(asset)
 		ImportedList.append([asset, 'SkeletalMesh'])
-	CreateTask_SK_LegModular()
+	CreateTask_SK_Chestplate()
 	
 	
 	
