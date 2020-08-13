@@ -1,0 +1,9 @@
+...
+1 StaticMesh(s) | 1 SkeletalMesh(s) | 0 Alembic(s) | 0 Animation(s) | 0 Camera(s) | 0 Other(s)
+
+[StaticMesh] -> "SM_LegModule001.fbx" exported in 0.3028809130191803 sec.
+D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\ExportedFbx\StaticMesh
+
+[SkeletalMesh] -> "SK_LegModule.fbx" exported in 0.39354029297828674 sec.
+D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\ExportedFbx\SkeletalMesh\LegModule
+

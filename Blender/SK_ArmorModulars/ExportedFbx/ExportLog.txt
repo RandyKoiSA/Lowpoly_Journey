@@ -1,0 +1,6 @@
+...
+0 StaticMesh(s) | 1 SkeletalMesh(s) | 0 Alembic(s) | 0 Animation(s) | 0 Camera(s) | 0 Other(s)
+
+[SkeletalMesh] -> "SK_rig.fbx" exported in 0.6311324238777161 sec.
+D:\Users\97ran\Desktop\UEFY_Manneq\ExportedFbx\SkeletalMesh\rig
+
