@@ -58,11 +58,11 @@ def ImportAllAssets():
 	SkeletalMesh_PreImportPath = []
 	print('========================= Creating SkeletalMesh tasks... =========================')
 	
-	def CreateTask_SK_GlovesArmor():
-		################[ Import GlovesArmor as SkeletalMesh type ]################
-		print('================[ New import task : GlovesArmor as SkeletalMesh type ]================')
-		FilePath = os.path.join(r'D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_ArmorModulars\ExportedFbx\SkeletalMesh\GlovesArmor\SK_GlovesArmor.fbx')
-		AdditionalParameterLoc = os.path.join(r'D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_ArmorModulars\ExportedFbx\SkeletalMesh\GlovesArmor\SK_GlovesArmor_AdditionalParameter.ini')
+	def CreateTask_SK_DefaultFeetMesh():
+		################[ Import DefaultFeetMesh as SkeletalMesh type ]################
+		print('================[ New import task : DefaultFeetMesh as SkeletalMesh type ]================')
+		FilePath = os.path.join(r'D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_ArmorModulars\ExportedFbx\SkeletalMesh\DefaultFeetMesh\SK_DefaultFeetMesh.fbx')
+		AdditionalParameterLoc = os.path.join(r'D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_ArmorModulars\ExportedFbx\SkeletalMesh\DefaultFeetMesh\SK_DefaultFeetMesh_AdditionalParameter.ini')
 		AssetImportPath = (os.path.join(unrealImportLocation, r'').replace('\\','/')).rstrip('/')
 		task = unreal.AssetImportTask()
 		task.filename = FilePath
@@ -82,16 +82,16 @@ def ImportAllAssets():
 		task.get_editor_property('options').texture_import_data.set_editor_property('material_search_location', unreal.MaterialSearchLocation.LOCAL)
 		task.get_editor_property('options').skeletal_mesh_import_data.set_editor_property('import_morph_targets', True)
 		task.get_editor_property('options').skeletal_mesh_import_data.set_editor_property('convert_scene', True)
-		print('================[ import asset : GlovesArmor ]================')
+		print('================[ import asset : DefaultFeetMesh ]================')
 		unreal.AssetToolsHelpers.get_asset_tools().import_asset_tasks([task])
 		if len(task.imported_object_paths) > 0:
 			asset = unreal.find_asset(task.imported_object_paths[0])
 		else:
 			asset = None
 		if asset == None:
-			ImportFailList.append('Asset "GlovesArmor" not found for after inport')
+			ImportFailList.append('Asset "DefaultFeetMesh" not found for after inport')
 			return
-		print('========================= Imports of GlovesArmor completed ! Post treatment started...	=========================')
+		print('========================= Imports of DefaultFeetMesh completed ! Post treatment started...	=========================')
 	
 		#Import the SkeletalMesh socket(s)
 		sockets_to_add = GetOptionByIniFile(AdditionalParameterLoc, 'Sockets', True)
@@ -103,10 +103,10 @@ def ImportAllAssets():
 		lods_to_add = GetOptionByIniFile(AdditionalParameterLoc, 'LevelOfDetail')
 		for x, lod in enumerate(lods_to_add):
 			pass
-		print('========================= Post treatment of GlovesArmor completed !	 =========================')
+		print('========================= Post treatment of DefaultFeetMesh completed !	 =========================')
 		unreal.EditorAssetLibrary.save_loaded_asset(asset)
 		ImportedList.append([asset, 'SkeletalMesh'])
-	CreateTask_SK_GlovesArmor()
+	CreateTask_SK_DefaultFeetMesh()
 	
 	
 	
