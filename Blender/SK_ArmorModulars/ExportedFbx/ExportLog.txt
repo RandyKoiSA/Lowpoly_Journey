@@ -1,9 +1,6 @@
 ...
-1 StaticMesh(s) | 1 SkeletalMesh(s) | 0 Alembic(s) | 0 Animation(s) | 0 Camera(s) | 0 Other(s)
+0 StaticMesh(s) | 1 SkeletalMesh(s) | 0 Alembic(s) | 0 Animation(s) | 0 Camera(s) | 0 Other(s)
 
-[SkeletalMesh] -> "SK_Chestplate.fbx" exported in 0.24768990278244019 sec.
-D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_ArmorModulars\ExportedFbx\SkeletalMesh\Chestplate
-
-[StaticMesh] -> "SM_DefaultBody.fbx" exported in 0.04065509885549545 sec.
-D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_ArmorModulars\ExportedFbx\StaticMesh\ChestModular
+[SkeletalMesh] -> "SK_GlovesArmor.fbx" exported in 0.2690592110157013 sec.
+D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_ArmorModulars\ExportedFbx\SkeletalMesh\GlovesArmor
 
