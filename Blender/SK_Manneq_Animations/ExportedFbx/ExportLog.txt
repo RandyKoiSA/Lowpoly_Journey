@@ -1,6 +1,0 @@
-...
-0 StaticMesh(s) | 1 SkeletalMesh(s) | 0 Alembic(s) | 0 Animation(s) | 0 Camera(s) | 0 Other(s)
-
-[SkeletalMesh] -> "SK_Mannequin.fbx" exported in 0.6756983995437622 sec.
-D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\SK_Manneq_Animations\ExportedFbx\SkeletalMesh\Mannequin
-
