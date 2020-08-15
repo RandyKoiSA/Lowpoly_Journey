@@ -1,6 +1,6 @@
 ...
 0 StaticMesh(s) | 1 SkeletalMesh(s) | 0 Alembic(s) | 0 Animation(s) | 0 Camera(s) | 0 Other(s)
 
-[SkeletalMesh] -> "SK_DefaultHead.fbx" exported in 0.32722020149230957 sec.
-D:\Users\97ran\Desktop\UEFY2.0 - Copy\ExportedFbx\SkeletalMesh\DefaultHead
+[SkeletalMesh] -> "SK_BasicArmor.fbx" exported in 0.46108880639076233 sec.
+D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\UEFY2.0 - Armor Assets\ExportedFbx\SkeletalMesh\BasicArmor
 

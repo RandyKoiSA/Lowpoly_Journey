@@ -1,7 +1,7 @@
 #This script was generated with the addons Blender for UnrealEngine : https://github.com/xavier150/Blender-For-UnrealEngine-Addons
 #It will import into Unreal Engine all the assets of type StaticMesh, SkeletalMesh, Animation and Pose
 #The script must be used in Unreal Engine Editor with Python plugins : https://docs.unrealengine.com/en-US/Engine/Editor/ScriptingAndAutomation/Python
-#Use this command : py "D:\Users\97ran\Desktop\UEFY2.0 - Copy\ExportedFbx\ImportSequencerScript.py"
+#Use this command : py "D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\UEFY2.0 - Armor Assets\ExportedFbx\ImportSequencerScript.py"
 
 
 def CheckTasks():

@@ -1,7 +1,7 @@
 #This script was generated with the addons Blender for UnrealEngine : https://github.com/xavier150/Blender-For-UnrealEngine-Addons
 #This script will import in unreal all camera in target sequencer
 #The script must be used in Unreal Engine Editor with Python plugins : https://docs.unrealengine.com/en-US/Engine/Editor/ScriptingAndAutomation/Python
-#Use this command : py "D:\Users\97ran\Desktop\UEFY2.0 - Copy\ExportedFbx\ImportAssetScript.py"
+#Use this command : py "D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\UEFY2.0 - Armor Assets\ExportedFbx\ImportAssetScript.py"
 
 
 def CheckTasks():
@@ -58,11 +58,11 @@ def ImportAllAssets():
 	SkeletalMesh_PreImportPath = []
 	print('========================= Creating SkeletalMesh tasks... =========================')
 	
-	def CreateTask_SK_DefaultHead():
-		################[ Import DefaultHead as SkeletalMesh type ]################
-		print('================[ New import task : DefaultHead as SkeletalMesh type ]================')
-		FilePath = os.path.join(r'D:\Users\97ran\Desktop\UEFY2.0 - Copy\ExportedFbx\SkeletalMesh\DefaultHead\SK_DefaultHead.fbx')
-		AdditionalParameterLoc = os.path.join(r'D:\Users\97ran\Desktop\UEFY2.0 - Copy\ExportedFbx\SkeletalMesh\DefaultHead\SK_DefaultHead_AdditionalParameter.ini')
+	def CreateTask_SK_BasicArmor():
+		################[ Import BasicArmor as SkeletalMesh type ]################
+		print('================[ New import task : BasicArmor as SkeletalMesh type ]================')
+		FilePath = os.path.join(r'D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\UEFY2.0 - Armor Assets\ExportedFbx\SkeletalMesh\BasicArmor\SK_BasicArmor.fbx')
+		AdditionalParameterLoc = os.path.join(r'D:\Users\97ran\Documents\Unreal Projects\Lowpoly_Journey\Blender\UEFY2.0 - Armor Assets\ExportedFbx\SkeletalMesh\BasicArmor\SK_BasicArmor_AdditionalParameter.ini')
 		AssetImportPath = (os.path.join(unrealImportLocation, r'').replace('\\','/')).rstrip('/')
 		task = unreal.AssetImportTask()
 		task.filename = FilePath
@@ -82,16 +82,16 @@ def ImportAllAssets():
 		task.get_editor_property('options').texture_import_data.set_editor_property('material_search_location', unreal.MaterialSearchLocation.LOCAL)
 		task.get_editor_property('options').skeletal_mesh_import_data.set_editor_property('import_morph_targets', True)
 		task.get_editor_property('options').skeletal_mesh_import_data.set_editor_property('convert_scene', True)
-		print('================[ import asset : DefaultHead ]================')
+		print('================[ import asset : BasicArmor ]================')
 		unreal.AssetToolsHelpers.get_asset_tools().import_asset_tasks([task])
 		if len(task.imported_object_paths) > 0:
 			asset = unreal.find_asset(task.imported_object_paths[0])
 		else:
 			asset = None
 		if asset == None:
-			ImportFailList.append('Asset "DefaultHead" not found for after inport')
+			ImportFailList.append('Asset "BasicArmor" not found for after inport')
 			return
-		print('========================= Imports of DefaultHead completed ! Post treatment started...	=========================')
+		print('========================= Imports of BasicArmor completed ! Post treatment started...	=========================')
 	
 		#Import the SkeletalMesh socket(s)
 		sockets_to_add = GetOptionByIniFile(AdditionalParameterLoc, 'Sockets', True)
@@ -103,10 +103,10 @@ def ImportAllAssets():
 		lods_to_add = GetOptionByIniFile(AdditionalParameterLoc, 'LevelOfDetail')
 		for x, lod in enumerate(lods_to_add):
 			pass
-		print('========================= Post treatment of DefaultHead completed !	 =========================')
+		print('========================= Post treatment of BasicArmor completed !	 =========================')
 		unreal.EditorAssetLibrary.save_loaded_asset(asset)
 		ImportedList.append([asset, 'SkeletalMesh'])
-	CreateTask_SK_DefaultHead()
+	CreateTask_SK_BasicArmor()
 	
 	
 	
