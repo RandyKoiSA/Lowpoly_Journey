@@ -7,6 +7,7 @@
 #include "Abilities/GameplayAbility.h"
 #include "AbilitySystemInterface.h"
 #include "AbilitySystemComponent.h"
+#include "AttributeSetBase.h"
 #include "CharacterBase.generated.h"
 
 UCLASS()
@@ -18,11 +19,11 @@ public:
 	// Sets default values for this character's properties
 	ACharacterBase();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterBase")
 	UAbilitySystemComponent* AbilitySystemComp;
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterBase")
+	UAttributeSetBase* AttributeSetComp;
 
 public:	
 	// Called every frame
@@ -30,6 +31,12 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	void AcquireAbility(TSubclassOf<UGameplayAbility> AbilityToAcquire);
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
 
 private:
 	UAbilitySystemComponent* GetAbilitySystemComponent() const override;

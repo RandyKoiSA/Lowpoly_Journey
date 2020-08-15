@@ -10,6 +10,7 @@ ACharacterBase::ACharacterBase()
 	PrimaryActorTick.bCanEverTick = true;
 
 	AbilitySystemComp = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("Ability System Component"));
+	AttributeSetComp = CreateDefaultSubobject<UAttributeSetBase>(TEXT("AttributeSet Component"));
 }
 
 // Called when the game starts or when spawned
@@ -31,6 +32,22 @@ void ACharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void ACharacterBase::AcquireAbility(TSubclassOf<UGameplayAbility> AbilityToAcquire)
+{
+	if (AbilitySystemComp)
+	{
+		if (HasAuthority() && AbilityToAcquire)
+		{
+			FGameplayAbilitySpecDef SpecDef = FGameplayAbilitySpecDef();
+			SpecDef.Ability = AbilityToAcquire;
+			FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(SpecDef, 1);
+			AbilitySystemComp->GiveAbility(AbilitySpec);
+		}
+
+		AbilitySystemComp->InitAbilityActorInfo(this, this);
+	}
 }
 
 UAbilitySystemComponent* ACharacterBase::GetAbilitySystemComponent() const
