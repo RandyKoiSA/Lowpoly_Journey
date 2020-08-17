@@ -18,6 +18,10 @@ void ACharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	AttributeSetComp->OnHealthChange.AddDynamic(this, &ACharacterBase::OnHealthChanged);
+	AttributeSetComp->OnManaChange.AddDynamic(this, &ACharacterBase::OnManaChanged);
+	AttributeSetComp->OnStrengthChange.AddDynamic(this, &ACharacterBase::OnStrengthChanged);
+	AttributeSetComp->OnDefenseChange.AddDynamic(this, &ACharacterBase::OnDefenseChanged);
 }
 
 // Called every frame
@@ -48,6 +52,30 @@ void ACharacterBase::AcquireAbility(TSubclassOf<UGameplayAbility> AbilityToAcqui
 
 		AbilitySystemComp->InitAbilityActorInfo(this, this);
 	}
+}
+
+void ACharacterBase::OnHealthChanged(float CurrentHealth, float MaxHealth)
+{
+
+	BP_OnHealthChanged(CurrentHealth, MaxHealth);
+}
+
+void ACharacterBase::OnManaChanged(float CurrentMana, float MaxMana)
+{
+
+	BP_OnManaChanged(CurrentMana, MaxMana);
+}
+
+void ACharacterBase::OnStrengthChanged(float StrengthValue)
+{
+
+	BP_OnStrengthChanged(StrengthValue);
+}
+
+void ACharacterBase::OnDefenseChanged(float DefenseValue)
+{
+	
+	BP_OnDefenseChanged(DefenseValue);
 }
 
 UAbilitySystemComponent* ACharacterBase::GetAbilitySystemComponent() const

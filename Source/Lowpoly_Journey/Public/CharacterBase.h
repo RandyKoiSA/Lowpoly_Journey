@@ -34,6 +34,30 @@ public:
 
 	void AcquireAbility(TSubclassOf<UGameplayAbility> AbilityToAcquire);
 
+	UFUNCTION()
+	void OnHealthChanged(float CurrentHealth, float MaxHealth);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "CharacterBase", meta = (DisplayName = "OnHealthChanged"))
+	void BP_OnHealthChanged(float CurrentHealth, float MaxHealth);
+
+	UFUNCTION()
+	void OnManaChanged(float CurrentMana, float MaxMana);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "CharacterBase", meta = (DisplayName = "OnManaChanged"))
+	void BP_OnManaChanged(float CurrentMana, float MaxMana);
+
+	UFUNCTION()
+	void OnStrengthChanged(float StrengthValue);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "CharacterBase", meta = (DisplayName = "OnStrengthChanged"))
+	void BP_OnStrengthChanged(float StrengthValue);
+
+	UFUNCTION()
+	void OnDefenseChanged(float DefenseValue);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "CharacterBase", meta = (DisplayName = "OnDefenseChanged"))
+	void BP_OnDefenseChanged(float DefenseValue);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
